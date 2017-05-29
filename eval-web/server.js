@@ -1,15 +1,27 @@
 'use strict';
 
-const express = require('express');
+var express = require('express');
+var ejs = require('ejs');
+
 
 // Constants
 const PORT = 8080;
 
 // App
-const app = express();
+var app = express();
+
+app.set('view engine', 'ejs');
+
+
+
+// index page 
 app.get('/', function (req, res) {
-    res.send('Hello world\n');
+    res.render('index');
 });
 
+
+app.use(express.static('public'));
+
 app.listen(PORT);
+
 console.log('Running on http://localhost:' + PORT);
