@@ -1,8 +1,15 @@
 'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+const express = require('express');
+
+// Constants
+const PORT = 8080;
+
+// App
+const app = express();
+app.get('/', function (req, res) {
+    res.send('Hello world\n');
+});
+
+app.listen(PORT);
+console.log('Running on http://localhost:' + PORT);

@@ -28,7 +28,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Dockerfile">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="server.js" />
+    <Content Include=".dockerignore">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
