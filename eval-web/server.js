@@ -2,6 +2,10 @@
 
 var express = require('express');
 var ejs = require('ejs');
+var querystring = require('querystring');
+var https = require('https');
+var request = require('request');
+
 
 
 // Constants
