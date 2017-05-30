@@ -1,40 +1,46 @@
 ﻿<html>
 <head>
-    <meta charset="utf-8">
-    <title>
-        Evals 2.0
-    </title>
+  <meta charset="utf-8"/>
+  <title>Bears</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
 </head>
+
 <body>
-    <div style="height:100%;width:100%;">
-        <div style="width: 90%; height: 30%; background-color: white; opacity: 0.6; margin-left: 5%;">
-            &nbsp;<br>
-            <div style="text-align: center; width: 100%;">
-                <h1>EVALS 2.0</h1>
-            </div>
-            <div style="text-align: center;  width: 100%;">
-                <span>Please complete evaluations.<br>Enter comments and rate sessions 1 (low) to 5 (high).</span>
-                &nbsp;<br>&nbsp;<br>&nbsp;<br>
-            </div>
-            <div style="text-align: center;">
-                <table align="center" cellpadding="5">
-                    <tbody>
-                        <tr>
-                            <td style="text-align: left;"><div id="session9"><b>Sessions</b></div></td>
-                            
-                        <tr>
-                            <td style="width: 60%; text-align: left;">SESSION_TITLE</td>
-                            <td align=right>
-                                <input type=text value=SESSION_RATING></input>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width: 60%; text-align: left; " colspan="7">
-                                <textarea style="background-color:White;width:100%;background-color:white!important;margin-bottom:20px;" rows="3" cols="20">SESSION_COMMENT</textarea>
-                            </td>
-                        </tr>
-                        
-                </table>
-            </div>
+	<div>
+        <ul id="bear-list" data-bind="foreach: allBears">
+          <li>
+            <h1><span data-bind="html: name"></span></h1>
+            <p><span data-bind="html: _id"></span></p>
+          </li>
+        </ul>
+  </div>
+
+  <script>
+    var ViewModels = {} || ViewModels;
+	ViewModels.BearsViewModel = (function () {
+		var exports = {};
+		exports.allBears = ko.observableArray([]);
+		
+		exports.load = function () {
+			$.get("/api/bears",
+			function (data) {
+				exports.allBears(data);
+			})
+			.fail(function (data) {
+				deferred.reject(error);
+			});
+		};
+		
+		return exports;
+    }());
+
+    $(document).ready(function () {
+		ko.applyBindings(ViewModels.BearsViewModel, document.getElementById('bear-list'));
+		ViewModels.BearsViewModel.load();
+    });
+
+  </script>
 </body>
 </html>

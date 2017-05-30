@@ -1,5 +1,5 @@
 {
-  "name": "eval-web",
+  "name": "eval-api",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "mortens",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+      "request" : "*"
   }
 }

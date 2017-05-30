@@ -32,8 +32,8 @@ app.get('/api/bears', function (req, res) {
 });
 
 
-
 app.use(express.static('public'));
+
 
 app.listen(PORT);
 

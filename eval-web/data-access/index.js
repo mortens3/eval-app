@@ -2,9 +2,9 @@
 
 var request = require('request');
 
-var contentApiUrl = 'http://localhost:8081';
+var contentApiUrl = 'http://localhost:8081/api';
 
-function getSessions(cb) {
+function getBears(cb) {
     request(contentApiUrl + '/bears', function (err, response, body) {
         if (err) {
             return cb(err);
