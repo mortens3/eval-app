@@ -1,0 +1,9 @@
+{
+  "name": "eval-api",
+  "version": "0.0.0",
+  "description": "eval-api",
+  "main": "server.js",
+  "author": {
+    "name": "mortens"
+  }
+}
