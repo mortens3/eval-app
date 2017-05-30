@@ -35,6 +35,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="server.js" />
+    <Content Include="Dockerfile">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include=".dockerignore" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>

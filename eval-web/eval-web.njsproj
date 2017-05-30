@@ -28,6 +28,9 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="data-access\index.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Dockerfile">
       <SubType>Code</SubType>
     </Compile>
@@ -42,6 +45,7 @@
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="data-access\" />
     <Folder Include="views\" />
     <Folder Include="public\" />
   </ItemGroup>
