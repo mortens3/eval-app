@@ -1,32 +1,35 @@
 ﻿<html>
 <head>
   <meta charset="utf-8"/>
-  <title>Bears</title>
+  <title>Sessions</title>
   <script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js"></script>
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.2.js"></script>
 </head>
-
 <body>
 	<div>
-        <ul id="bear-list" data-bind="foreach: allBears">
+        <ul id="session-list" data-bind="foreach: allSessions">
           <li>
             <h1><span data-bind="html: name"></span></h1>
             <p><span data-bind="html: _id"></span></p>
+			<p><span data-bind="html: level"></span></p>
+			<p><span data-bind="html: presenter"></span></p>
+			<p><span data-bind="html: slot"></span></p>
+			<p><span data-bind="html: abstract"></span></p>
+			<p><span data-bind="html: event"></span></p>
           </li>
         </ul>
   </div>
-
   <script>
     var ViewModels = {} || ViewModels;
-	ViewModels.BearsViewModel = (function () {
+	ViewModels.SessionsViewModel = (function () {
 		var exports = {};
-		exports.allBears = ko.observableArray([]);
+		exports.allSessions = ko.observableArray([]);
 		
 		exports.load = function () {
-			$.get("/api/bears",
+			$.get("/api/sessions",
 			function (data) {
-				exports.allBears(data);
+				exports.allSessions(data);
 			})
 			.fail(function (data) {
 				deferred.reject(error);
@@ -37,8 +40,8 @@
     }());
 
     $(document).ready(function () {
-		ko.applyBindings(ViewModels.BearsViewModel, document.getElementById('bear-list'));
-		ViewModels.BearsViewModel.load();
+		ko.applyBindings(ViewModels.SessionsViewModel, document.getElementById('session-list'));
+		ViewModels.SessionsViewModel.load();
     });
 
   </script>

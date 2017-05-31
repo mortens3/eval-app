@@ -13,9 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var bears = require('./routes/bears');
+var sessions = require('./routes/sessions');
 
 
 app.use('/api', bears);
+app.use('/api', sessions);
 
 app.listen(PORT);
 

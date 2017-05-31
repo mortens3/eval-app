@@ -28,9 +28,11 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="models\session.js" />
     <Compile Include="models\bear.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="routes\sessions.js" />
     <Compile Include="routes\bears.js">
       <SubType>Code</SubType>
     </Compile>
