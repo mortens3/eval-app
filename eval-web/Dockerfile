@@ -11,5 +11,7 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
+ENV CONTENT_API_URL=http://localhost:8081/api
+
 EXPOSE 8080
 CMD [ "npm", "start" ]

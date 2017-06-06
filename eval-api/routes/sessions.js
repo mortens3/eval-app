@@ -21,6 +21,7 @@ router.route('/sessions')
     // get all the sessions accessed at GET /api/sessions
     .get(function (req, res) {
         Session.find(function (err, sessions) {
+            console.log('sessions=' + eval(sessions));
             if (err)
                 res.send(err);
             res.json(sessions);

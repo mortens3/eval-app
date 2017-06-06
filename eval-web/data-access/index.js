@@ -2,11 +2,13 @@
 
 var request = require('request');
 
-var contentApiUrl = 'http://localhost:8081/api';
+var contentApiUrl = process.env.CONTENT_API_URL;
 
 function getSessions(cb) {
+    console.log(contentApiUrl);
     request(contentApiUrl + '/sessions', function (err, response, body) {
         if (err) {
+            console.log(err);
             return cb(err);
         }
         var data = JSON.parse(body);
