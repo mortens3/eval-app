@@ -1,6 +1,12 @@
 {
-  "name": "node-api",
+  "name": "eval-api",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "mortens",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.0.2",
     "express": "^4.0.0",

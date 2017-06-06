@@ -1,5 +1,5 @@
 {
-  "name": "eval-api",
+  "name": "eval-web",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "mortens",
