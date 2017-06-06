@@ -2,7 +2,7 @@
 
 var request = require('request');
 
-var contentApiUrl = 'http://localhost:8081/api';
+var contentApiUrl = 'http://localhost:49161/api';
 
 function getSessions(cb) {
     request(contentApiUrl + '/sessions', function (err, response, body) {
