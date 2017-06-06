@@ -34,9 +34,11 @@ app.get('/api/bears', function (req, res) {
 app.get('/api/sessions', function (req, res) {
     dataAccess.getSessions(function (error, data, apiInstance) {
         if (error) {
+            console.log(error);
             return res.status(500).send(error);
         }
         else {
+            console.log(data);
             return res.status(200).send(data);
         }
     });
