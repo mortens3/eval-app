@@ -7,7 +7,7 @@ var https = require('https');
 var request = require('request');
 
 // Constants
-const PORT = 8080;
+const PORT = 3000;
 
 // App
 var app = express();
