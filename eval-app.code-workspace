@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "eval-api"
+		},
+		{
+			"path": "eval-web"
+		}
+	],
+	"settings": {}
+}
