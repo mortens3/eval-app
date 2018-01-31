@@ -1,0 +1,2 @@
+C:\Users\mortens\Github\eval-app\eval-web\obj\Debug\eval-web.njsprojResolveAssemblyReference.cache
+C:\Users\mortens\Github\eval-app\eval-web\bin\Microsoft.NodejsTools.WebRole.dll
