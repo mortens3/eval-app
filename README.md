@@ -1,5 +1,5 @@
-﻿# eval-web
+﻿# eval-app
 
-eval-web
+eval-app
 
 v0.1
