@@ -2,7 +2,7 @@
 
 var request = require('request');
 
-var contentApiUrl = 'https://evalapi.azurewebsites.net/api';
+var contentApiUrl = process.env.CONTENT_API_URL;
 
 function getSessions(cb) {
     console.log(contentApiUrl);
