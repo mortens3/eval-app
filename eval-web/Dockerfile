@@ -11,7 +11,7 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-ENV CONTENT_API_URL=http://localhost:3001/api
+ENV CONTENT_API_URL=https://evalapp.scm.azurewebsites.net/api/
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
