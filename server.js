@@ -1,5 +1,9 @@
 'use strict';
 
+const appInsights = require("applicationinsights");
+appInsights.setAutoDependencyCorrelation(true);
+appInsights.start();
+
 var express = require('express');
 var ejs = require('ejs');
 var querystring = require('querystring');
@@ -10,6 +14,7 @@ var request = require('request');
 const PORT = 3000;
 
 // App
+
 var app = express();
 var dataAccess = require('./data-access/index');
 
@@ -24,9 +29,11 @@ app.get('/api/bears', function (req, res) {
     dataAccess.getBears(function (error, data, apiInstance) {
         if (error) {
             return res.status(500).send(error);
+            appInsights.defaultClient.trackException({exception: error});
         }
         else {
             return res.status(200).send(data);
+            appInsights.defaultClient.trackTrace({message:'/api/bears res=' + data});
         }
     });
 });
