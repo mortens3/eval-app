@@ -1,14 +1,16 @@
 'use strict';
 
-const appInsights = require("applicationinsights");
-appInsights.setAutoDependencyCorrelation(true);
-appInsights.start();
+
 
 var express = require('express');
 var ejs = require('ejs');
 var querystring = require('querystring');
 var https = require('https');
 var request = require('request');
+const appInsights = require("applicationinsights");
+appInsights.setAutoDependencyCorrelation(true);
+appInsights.setup("6f6fde25-c558-4045-8728-4c46422381c7");
+appInsights.start();
 
 // Constants
 const PORT = 3000;
